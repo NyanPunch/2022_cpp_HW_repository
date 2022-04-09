@@ -37,18 +37,19 @@ int main() {
 	int i1, i2, min_i;
 	cout << "두개의 정수를 입력하세요 : ";
 	cin >> i1 >> i2;
-	min_i = GetMin(i1, i2);
+	min_i = GetMin(i1, i2); //정수 함수로 이동
 	cout << "최소값은 " << min_i << "입니다.\n";
 	
 	double d1, d2, min_d;
 	cout << "두개의 실수를 입력하세요 : ";
 	cin >> d1 >> d2;
-	min_d = GetMin(d1, d2);
+	min_d = GetMin(d1, d2); //실수 함수로 이동
 	cout << "최소값은 " << min_d << "입니다.\n";
 
 	char c1[10], c2[10], min_c[10];
 	cout << "두개의 문자열을 입력하세요(최대10자) : ";
 	cin >> c1 >> c2;
+	//문자열 함수로 이동
 	if (GetMin(c1, c2) == 1) //c1이 크므로 c2 출력
 		cout << "최소값은 " << c2 << "입니다.\n";
 	else if (GetMin(c1, c2) == -1) //c2가 크므로 c1 출력
@@ -58,6 +59,7 @@ int main() {
 	cout << "배열의 원소 10개 입력 : ";
 	for (int i = 0; i < 10; i++)
 		cin >> arr[i];
+	//정수 배열 함수로 이동
 	min_arr = GetMin(arr, 10);
 	cout << "최소값은 " << min_arr << "입니다.\n";
 
