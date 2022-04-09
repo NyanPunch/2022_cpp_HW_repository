@@ -9,7 +9,7 @@
 #include <iomanip>
 #include <cstring>
 #define MAX_Std 2			//학생 인원수
-#define MAX_Sub 1			//수강 과목수
+#define MAX_Sub 3			//수강 과목수
 using namespace std;
 
 struct Subject {			//과목 정보 구조체
