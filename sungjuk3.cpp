@@ -105,17 +105,23 @@ void PrintMenu()
 /* 교과목 성적 처리 */
 void CalcGPA(Subject& Sub) {
 	if (strcmp(Sub.grade, "A+") == 0)
-		Sub.GPA = Sub.hakjum * 4.5;
+		Sub.GPA = (float)Sub.hakjum * 4.5;
 	else if ((strcmp(Sub.grade, "A0") == 0) || (strcmp(Sub.grade, "A") == 0))
-		Sub.GPA = Sub.hakjum * 4.0;
+		Sub.GPA = (float)Sub.hakjum * 4.0;
 	else if (strcmp(Sub.grade, "B+") == 0)
-		Sub.GPA = Sub.hakjum * 3.5;
+		Sub.GPA = (float)Sub.hakjum * 3.5;
 	else if ((strcmp(Sub.grade, "B0") == 0) || (strcmp(Sub.grade, "B") == 0))
-		Sub.GPA = Sub.hakjum * 3.0;
+		Sub.GPA = (float)Sub.hakjum * 3.0;
 	else if (strcmp(Sub.grade, "C+") == 0)
-		Sub.GPA = Sub.hakjum * 2.5;
+		Sub.GPA = (float)Sub.hakjum * 2.5;
 	else if ((strcmp(Sub.grade, "C0") == 0) || (strcmp(Sub.grade, "C") == 0))
-		Sub.GPA = Sub.hakjum * 2.0;
+		Sub.GPA = (float)Sub.hakjum * 2.0;
+	else if (strcmp(Sub.grade, "D+") == 0)
+		Sub.GPA = (float)Sub.hakjum * 1.5;
+	else if ((strcmp(Sub.grade, "D0") == 0) || (strcmp(Sub.grade, "D") == 0))
+		Sub.GPA = (float)Sub.hakjum * 1.0;
+	else if (strcmp(Sub.grade, "F") == 0)
+		Sub.GPA = (float)Sub.hakjum * 0.0;
 }
 
 /* 평균 처리 */
