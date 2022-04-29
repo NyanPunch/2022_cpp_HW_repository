@@ -38,10 +38,10 @@ void PrintAllStdList(student* pSt, int StudentNum);
 void ModifyStdInfo(student *pSt);
 inline void PrintMenu();				//메뉴출력
 
-void InputValue(char* str) {
+inline void InputValue(char* str) {
 	cin >> str;
 }
-void InputValue(int& i) {
+inline void InputValue(int& i) {
 	cin >> i;
 }
 
@@ -89,8 +89,7 @@ int main() {
 	return 0;
 }
 /* 메뉴 */
-void PrintMenu()
-{
+inline void PrintMenu() {
 	cout << "\n===== 메뉴 =====\n"
 		<< "1. 학생 성적 입력\n"
 		<< "2. 전체 학생 성적 보기\n"
