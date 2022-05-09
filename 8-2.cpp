@@ -42,10 +42,10 @@ void main() {
 	sub1.PrintTitle();
 	sub1.PrintData();
 	cout << "\n< 접근자 함수를 이용한 정보 출력 >\n";
-	cout <<	"\n과목 명 : "<<sub1.GetName();
-	cout << "\n과목 학점 : "<<sub1.GetHakjum();
+	cout << "\n과목 명 : " << sub1.GetName();
+	cout << "\n과목 학점 : " << sub1.GetHakjum();
 	cout << "\n과목 등급 : " << sub1.GetGrade();
-	cout << "\n과목 평점 : "<<sub1.GetGPA();
+	cout << "\n과목 평점 : " << sub1.GetGPA();
 }
 /* 객체 초기화 */
 void Subject::Initialize()
