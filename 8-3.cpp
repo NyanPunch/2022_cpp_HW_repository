@@ -195,7 +195,7 @@ void Student::Initialize(string str, int hakbun, int subnum, Subject* sub)
 	CalcAveGPA(); //평균 평점 계산하여 삽입
 }
 
-inline void Student::Remove()
+void Student::Remove()
 {
 	delete[] m_sub;
 }
