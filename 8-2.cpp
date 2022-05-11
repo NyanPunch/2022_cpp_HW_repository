@@ -25,10 +25,18 @@ public:
 	void PrintData();	//멤버변수 값 출력
 	void CalcGPA();		//평점 계산
 	/* 접근자 함수 추가 */
-	string GetName();	//과목명 리턴
-	int GetHakjum();	//학점 리턴
-	string GetGrade();	//등급 리턴
-	float GetGPA();		//평점 리턴
+	string GetName() { //과목명 리턴
+		return m_name;
+	}
+	int GetHakjum() { //학점 리턴
+		return m_hakjum;
+	}
+	string GetGrade() { //등급 리턴
+		return m_grade;
+	}
+	float GetGPA() { //평점 리턴
+		return m_GPA;
+	}
 };
 
 /* 메인 함수 */
@@ -46,6 +54,23 @@ void main() {
 	cout << "\n과목 학점 : " << sub1.GetHakjum();
 	cout << "\n과목 등급 : " << sub1.GetGrade();
 	cout << "\n과목 평점 : " << sub1.GetGPA();
+
+	Subject sub3[2];	//배열 선언
+	/* 객체 배열 접근자 함수 출력 */
+	sub3[0].Initialize("컴퓨터 구조", 3, "C");
+
+	cout << "\n< 접근자 함수를 이용한 정보 출력 >\n";
+	cout << "\n과목 명 : " << sub3[0].GetName();
+	cout << "\n과목 학점 : " << sub3[0].GetHakjum();
+	cout << "\n과목 등급 : " << sub3[0].GetGrade();
+	cout << "\n과목 평점 : " << sub3[0].GetGPA();
+
+	sub3[1].Initialize("자료구조", 3, "A");
+
+	cout << "\n과목 명 : " << sub3[1].GetName();
+	cout << "\n과목 학점 : " << sub3[1].GetHakjum();
+	cout << "\n과목 등급 : " << sub3[1].GetGrade();
+	cout << "\n과목 평점 : " << sub3[1].GetGPA();
 }
 /* 객체 초기화 */
 void Subject::Initialize()
@@ -115,24 +140,4 @@ void Subject::CalcGPA()
 		m_GPA = m_hakjum * 1.0f;
 	else if (m_grade == "F")
 		m_GPA = m_hakjum * 0.0f;
-}
-/* 접근자 함수 4개 추가 */
-string Subject::GetName()
-{
-	return m_name;
-}
-
-int Subject::GetHakjum()
-{
-	return m_hakjum;
-}
-
-string Subject::GetGrade()
-{
-	return m_grade;
-}
-
-float Subject::GetGPA()
-{
-	return m_GPA;
 }
