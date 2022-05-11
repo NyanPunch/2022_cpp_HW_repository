@@ -25,10 +25,18 @@ public:
 	void PrintData();	//멤버변수 값 출력
 	void CalcGPA();		//평점 계산
 	/* 접근자 함수 추가 */
-	string GetName();	//과목명 리턴
-	int GetHakjum();	//학점 리턴
-	string GetGrade();	//등급 리턴
-	float GetGPA();		//평점 리턴
+	string GetName() { //과목명 리턴
+		return m_name;
+	}	
+	int GetHakjum() { //학점 리턴
+		return m_hakjum;
+	}
+	string GetGrade() { //등급 리턴
+		return m_grade;
+	}
+	float GetGPA() { //평점 리턴
+		return m_GPA;
+	}
 };
 
 class Student {
@@ -48,29 +56,50 @@ public:
 	void PrintData();
 	void CalcAveGPA();
 	/* 접근자 함수 추가 */
+	string GetName() {	//학생이름 리턴
+		return m_name;
+	}	
+	int GetHakbun() {	//학번 리턴
+		return m_hakbun;
+	}	
+	int GetSubNum() {	//과목수 리턴
+		return m_subnum;
+	}
+	float GetAveGPA() { //평균평점 리턴
+		return m_aveGPA;
+	}
 };
 /*****************************
 *		메인	함수		 *
 *****************************/
 void main() {
 	Subject sub[2];
-
 	sub[0].Initialize("컴퓨터", 3, "C");
 	sub[1].Initialize("현대무용", 2, "A");
 
 	Student st1, st2;
-
 	st1.Initialize();
+	/* st2 과목수 sub배열에 저장된 과목 2개 저장 */
 	st2.Initialize("홍길동", 2013909845, 2, sub);
 
+	/* st1 정보 입력 및 출력 */
 	st1.InputData();
 	cout << "\n" << "st1 정보" << "\n";
 	st1.PrintData();
 
+	/* st2 정보 출력 */
 	cout << "\n" << "st2 정보" << "\n";
 	st2.PrintData();
-	st1.Remove();
 
+	/* 접근자 함수 이용 */
+	cout << "\n< 접근자 함수를 이용한 출력 >\n";
+	cout << "\n학생명 : " << st1.GetName();
+	cout << "\n학번 : " << st1.GetHakbun();
+	cout << "\n과목 수 : " << st1.GetSubNum();
+	cout << "\n평균평점 : " << st1.GetAveGPA();
+
+	/*동적 할당 해제*/
+	st1.Remove();
 }
 /* 과목 멤버 함수 */
 /* 객체 초기화 */
@@ -142,26 +171,6 @@ void Subject::CalcGPA()
 		m_GPA = m_hakjum * 1.0f;
 	else if (m_grade == "F")
 		m_GPA = m_hakjum * 0.0f;
-}
-/* 접근자 함수 4개 추가 */
-string Subject::GetName()
-{
-	return m_name;
-}
-
-int Subject::GetHakjum()
-{
-	return m_hakjum;
-}
-
-string Subject::GetGrade()
-{
-	return m_grade;
-}
-
-float Subject::GetGPA()
-{
-	return m_GPA;
 }
 
 /*************************************
