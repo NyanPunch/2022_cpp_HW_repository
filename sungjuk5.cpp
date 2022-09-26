@@ -198,8 +198,8 @@ student* StdSearch(student* pSt, int StudentNum) {
 	string SearchName;
 	cout << "\n찾을 학생의 이름을 입력해주세요.\n이름 : ";
 	InputValue(SearchName);
-	for (int i = 0; i < StudentNum; i++, pSt++) {
-		if (pSt->stdname.size() == SearchName.size() && pSt->stdname == SearchName) //Searchname과 이름의 글자수가 같고, 저장된 이름이 같을 시 해당 이름 리턴
+	for (int i = 0; i < StudentNum; i++) {
+		if (pSt[i].stdname.size() == SearchName.size() && pSt[i].stdname == SearchName) //Searchname과 이름의 글자수가 같고, 저장된 이름이 같을 시 해당 이름 리턴
 			return &pSt[i]; 
 	}
 	return NULL;
@@ -237,7 +237,7 @@ void ModifyStdInfo(student* pSt) {
 				cout << "과목학점 : "; InputValue(pSt->Sub->hakjum);
 				cout << "과목등급 : "; InputValue(pSt->Sub->grade);
 				CalcGPA(*Sub);
-				int SubNum = pSt->SubNum;
+				int SubNum = pSt->SubNum;  
 				pSt->aveGPA = CalcAveGPA(Sub,SubNum);
 			}
 		}
